@@ -40,3 +40,250 @@ body {
 html {
     scroll-behavior: smooth;
 }
+
+/* ===== Navbar Styles ===== */
+.navbar {
+    background-color: var(--color-bg-secondary);
+    border-bottom: 2px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-accent-gold);
+    letter-spacing: 2px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-item {
+    margin: 0;
+}
+
+.nav-link {
+    color: var(--color-text-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--color-accent-gold);
+}
+
+/* ===== Main Content ===== */
+main {
+    min-height: calc(100vh - 140px);
+}
+
+/* ===== Footer Styles ===== */
+.footer {
+    background-color: var(--color-bg-secondary);
+    border-top: 2px solid var(--color-border);
+    margin-top: 2rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    color: var(--color-text-secondary);
+}
+
+.footer-container p {
+    margin: 0;
+}
+
+/* ===== Page Load Animation ===== */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Initial state - hide until page loads */
+body {
+    opacity: 0;
+    animation: fadeIn 0.6s ease-in 0.2s forwards;
+}
+
+.navbar {
+    animation: fadeInDown 0.8s ease-out forwards;
+}
+
+main {
+    animation: fadeInUp 0.8s ease-out 0.2s forwards;
+}
+
+.footer {
+    animation: fadeInUp 0.8s ease-out 0.4s forwards;
+}
+
+/* Page loaded state */
+body.page-loaded {
+    opacity: 1;
+}
+
+/* Stagger animation for elements with data-animate attribute */
+[data-animate] {
+    opacity: 0;
+}
+
+.animate-fade-in {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* ===== Intro Overlay Animation ===== */
+@keyframes introFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes introFadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideOutUp {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+.intro-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: introFadeOut 0.6s ease-out 2.9s forwards;
+}
+
+.intro-overlay.fade-out {
+    animation: introFadeOut 0.6s ease-out forwards;
+}
+
+.intro-container {
+    text-align: center;
+}
+
+.intro-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.intro-top-row {
+    display: flex;
+    gap: 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.intro-line {
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: var(--color-text-primary);
+    opacity: 0;
+}
+
+.intro-line-1 {
+    color: var(--color-accent-gold);
+    font-size: 1.5rem;
+    animation: slideInUp 0.8s ease-out 0.3s forwards;
+}
+
+.intro-line-2 {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    color: var(--color-text-secondary);
+    animation: slideInUp 0.8s ease-out 1.2s forwards;
+}
+
+.intro-separator {
+    width: 200px;
+    height: 2px;
+    background-color: var(--color-accent-gold);
+    opacity: 0;
+    animation: slideInUp 0.8s ease-out 0.9s forwards;
+}
+
+.intro-line-3 {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    color: var(--color-accent-gold);
+    animation: slideInUp 0.8s ease-out 0.6s forwards;
+}
