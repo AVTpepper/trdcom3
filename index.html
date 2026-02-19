@@ -1,46 +1,508 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxury Minimalist</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kommærsj - TRD Commercial Hub. Kommersiell suksess gjennom praktisk trening og spisskompetanse.">
+  <title>Kommærsj – TRD Commercial Hub</title>
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon/favicon.svg">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script>
+    // Hide loading overlay immediately if already shown this session
+    if (sessionStorage.getItem('loadingShown')) {
+      document.documentElement.classList.add('loading-complete');
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.classList.add('content-visible');
+      });
+    }
+  </script>
+  <style>
+    .loading-complete .loading-overlay { display: none; }
+  </style>
 </head>
-<body>
-    <!-- Intro Overlay -->
-    <div class="intro-overlay" id="introOverlay">
-        <div class="intro-container">
-            <div class="intro-content">
-                <div class="intro-line intro-line-1">TRD</div>
-                <div class="intro-line intro-line-3">KOMMÆRSJ</div>
-                <div class="intro-separator"></div>
-                <div class="intro-line intro-line-2">COMMERCIAL HUB</div>
-            </div>
+<body class="has-loading-overlay">
+
+  <!-- Loading Overlay -->
+  <div class="loading-overlay" id="loading-overlay">
+    <div class="loading-content">
+      <div class="loading-taglines">
+        <span class="loading-tagline loading-tagline-1">TRD</span>
+        <span class="loading-tagline loading-tagline-2">COMMERCIAL HUB</span>
+      </div>
+      <div class="loading-divider"></div>
+      <div class="loading-brand">
+        <span class="loading-brand-text">KOMMÆRSJ</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <!-- Logo -->
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+          <span>K</span>
         </div>
+        <div class="logo-text-wrap">
+          <span class="logo-text">KOMMÆRSJ</span>
+          <span class="logo-subtext">TRD Commercial Hub</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Hjem</a>
+        <a href="pages/tjenester.html" class="nav-link">Tjenester</a>
+        <a href="pages/om-oss.html" class="nav-link">Om Oss</a>
+        <a href="pages/anmeldelser.html" class="nav-link">Anmeldelser</a>
+        <a href="pages/kontakt.html" class="nav-link">Kontakt</a>
+        <a href="pages/kontakt.html" class="nav-cta">BOOK MØTE</a>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Meny">
+        <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <svg id="close-icon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
     </div>
 
-    <nav class="navbar">
-        <div class="navbar-container">
-            <div class="navbar-logo">Luxury</div>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobile-nav">
+      <a href="index.html" class="mobile-nav-link">Hjem</a>
+      <a href="pages/tjenester.html" class="mobile-nav-link">Tjenester</a>
+      <a href="pages/om-oss.html" class="mobile-nav-link">Om Oss</a>
+      <a href="pages/anmeldelser.html" class="mobile-nav-link">Anmeldelser</a>
+      <a href="pages/kontakt.html" class="mobile-nav-link">Kontakt</a>
+      <a href="pages/kontakt.html" class="mobile-nav-cta">BOOK STRATEGISAMTALE</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-bg">
+        <img src="https://images.unsplash.com/photo-1761437855598-a84c2849dc6a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGdvbGQlMjBsaW5lcyUyMGJsYWNrJTIwYmFja2dyb3VuZHxlbnwxfHx8fDE3NzEzNTgyOTh8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Abstract Gold Background">
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-content">
+        <p class="hero-label fade-in">Sprinten</p>
+        <h1 class="hero-title fade-in">Mindre prat,<br>mer fart.</h1>
+        <p class="hero-desc fade-in">Vi gjør prioriteringene tydelige, kutter støy og setter en enkel rytme som holder trykket oppe.</p>
+        <div class="hero-buttons fade-in">
+          <a href="pages/kontakt.html" class="btn btn-primary btn-lg">BOOK STRATEGISAMTALE</a>
+          <a href="pages/tjenester.html" class="btn btn-outline btn-lg">SE TJENESTER</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section class="section section-dark">
+      <div class="container">
+        <div class="section-header fade-in">
+          <h2 class="section-title">HVORFOR VELGER KUNDER OSS?</h2>
+          <div class="section-divider"></div>
+        </div>
+        
+        <div class="grid-3">
+          <div class="card fade-in fade-in-delay-1">
+            <div class="card-feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <h3 class="mb-4">Beslutninger først</h3>
+            <p class="text-muted">Vi forankrer valg hos de som faktisk må leve med dem.</p>
+          </div>
+          
+          <div class="card fade-in fade-in-delay-2">
+            <div class="card-feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <h3 class="mb-4">Gjør det ordentlig</h3>
+            <p class="text-muted">Vi foreslår færre tiltak, men de som flytter tall. Eller ikke i det hele tatt.</p>
+          </div>
+          
+          <div class="card fade-in fade-in-delay-3">
+            <div class="card-feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <h3 class="mb-4">Du får resultater</h3>
+            <p class="text-muted">3–5 prioriterte satsinger med klare ja/nei-kriterier. Synliggjort risiko og hva vi tester først.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="section section-light">
+      <div class="container">
+        <div class="flex justify-between items-end mb-16 flex-wrap gap-4">
+          <div>
+            <p class="section-label">VÅRE TJENESTER</p>
+            <h2>Det vi tilbyr</h2>
+          </div>
+          <a href="pages/tjenester.html" class="service-link hidden" style="display: none;">
+            SE ALLE TJENESTER 
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <div class="grid-2">
+          <!-- Service 1 -->
+          <div class="card card-service fade-in">
+            <h3 class="mb-4">KOMMERSIELL BESLUTNINGSSPRINT</h3>
+            <p class="text-muted mb-6">Når retning eller gjennomføring er uklar. På 2–4 uker lander vi valg, risiko/antakelser og en 90-dagers plan – klar for leder/styre.</p>
+            <ul class="feature-list mb-8">
+              <li class="feature-item"><span class="feature-dot"></span>Prioritert portefølje (3–5 satsinger)</li>
+              <li class="feature-item"><span class="feature-dot"></span>Beslutningslogg & risiko</li>
+              <li class="feature-item"><span class="feature-dot"></span>90-dagers plan med eiere</li>
             </ul>
+            <a href="pages/tjeneste-beslutningssprint.html" class="service-link">Les mer →</a>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="card card-service fade-in">
+            <h3 class="mb-4">KOMMÆRSJ FOR HIRE</h3>
+            <p class="text-muted mb-6">Interim kommersiell ledelse. Når det virkelig gjelder: få inn et senior ressurs som driver fra strategi til leveranse.</p>
+            <ul class="feature-list mb-8">
+              <li class="feature-item"><span class="feature-dot"></span>Senior ressurs on-demand</li>
+              <li class="feature-item"><span class="feature-dot"></span>Strategi til leveranse</li>
+              <li class="feature-item"><span class="feature-dot"></span>Kritiske endringer/skalering</li>
+            </ul>
+            <a href="pages/tjeneste-hire.html" class="service-link">Les mer →</a>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="card card-service fade-in">
+            <h3 class="mb-4">EXECUTIVE SPARRING</h3>
+            <p class="text-muted mb-6">Fortrolig sparring for ledere som vil ta bedre beslutninger og få mindre støy i hverdagen. 1–2 økter/mnd.</p>
+            <ul class="feature-list mb-8">
+              <li class="feature-item"><span class="feature-dot"></span>1–2 økter per måned</li>
+              <li class="feature-item"><span class="feature-dot"></span>Fokus på prioritering</li>
+              <li class="feature-item"><span class="feature-dot"></span>Raskere beslutninger</li>
+            </ul>
+            <a href="pages/tjeneste-sparring.html" class="service-link">Les mer →</a>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="card card-service fade-in">
+            <h3 class="mb-4">ENTERPRISE SALG – SOM TJENESTE</h3>
+            <p class="text-muted mb-6">Skal dere selge til store kunder, men mangler kapasitet, nettverk eller metode? Vi gjør salget for dere.</p>
+            <ul class="feature-list mb-8">
+              <li class="feature-item"><span class="feature-dot"></span>Posisjonering & møtebooking</li>
+              <li class="feature-item"><span class="feature-dot"></span>Forhandling & signering</li>
+              <li class="feature-item"><span class="feature-dot"></span>Lav fastpris + suksesshonorar</li>
+            </ul>
+            <a href="pages/tjeneste-enterprise-salg.html" class="service-link">Les mer →</a>
+          </div>
         </div>
-    </nav>
 
-    <main>
-        <!-- Page content goes here -->
-    </main>
-
-    <footer class="footer">
-        <div class="footer-container">
-            <p>&copy; 2026 Luxury Minimalist. All rights reserved.</p>
+        <div class="mt-8 text-center" style="display: block;">
+          <a href="pages/tjenester.html" class="service-link">
+            SE ALLE TJENESTER 
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <script src="assets/js/main.js"></script>
+    <!-- Process Section -->
+    <section class="section section-dark">
+      <div class="container">
+        <div class="section-header fade-in">
+          <h2 class="section-title">SLIK JOBBER VI</h2>
+          <p class="text-muted">Enkelt og effektivt.</p>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-step fade-in fade-in-delay-1">
+            <span class="process-number">1</span>
+            <div class="process-content">
+              <h3 class="process-title">Diagnose</h3>
+              <p class="process-desc">Rask innsikt i pipeline, kunder og enhetsøkonomi</p>
+            </div>
+            <div class="process-line"></div>
+          </div>
+          
+          <div class="process-step fade-in fade-in-delay-2">
+            <span class="process-number">2</span>
+            <div class="process-content">
+              <h3 class="process-title">Prioritering</h3>
+              <p class="process-desc">Tydelige valg/ikke-valg og risiko/antakelser</p>
+            </div>
+            <div class="process-line"></div>
+          </div>
+          
+          <div class="process-step fade-in fade-in-delay-3">
+            <span class="process-number">3</span>
+            <div class="process-content">
+              <h3 class="process-title">Plan</h3>
+              <p class="process-desc">90 dager med eiere, milepæler og styringsrytme</p>
+            </div>
+            <div class="process-line"></div>
+          </div>
+          
+          <div class="process-step fade-in fade-in-delay-4">
+            <span class="process-number">4</span>
+            <div class="process-content">
+              <h3 class="process-title">Momentum</h3>
+              <p class="process-desc">Ukentlig takt, beslutningslogg og læring</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section section-light">
+      <div class="container" style="max-width: 900px;">
+        <p class="section-label text-center mb-12 fade-in">HVA KUNDENE OPPLEVER</p>
+        
+        <div class="grid gap-8">
+          <div class="testimonial-card fade-in">
+            <span class="testimonial-quote-mark">"</span>
+            <p class="testimonial-text">Vi tok tre beslutninger vi hadde utsatt i måneder – på to uker.</p>
+          </div>
+          
+          <div class="testimonial-card fade-in">
+            <span class="testimonial-quote-mark">"</span>
+            <p class="testimonial-text">Endelig stoppet vi ting som ikke ga avkastning, og frigjorde kapasitet.</p>
+          </div>
+          
+          <div class="testimonial-card fade-in">
+            <span class="testimonial-quote-mark">"</span>
+            <p class="testimonial-text">Styremøtene ble enklere – vi kom med klare valg og en realistisk plan.</p>
+          </div>
+        </div>
+        
+        <p class="text-center text-dark text-sm mt-12">(Referanser/case på forespørsel)</p>
+      </div>
+    </section>
+
+    <!-- Is This For Us? (Checklist) -->
+    <section class="section section-dark">
+      <div class="container">
+        <div class="checklist-section">
+          <div class="fade-in">
+            <img 
+              src="https://images.unsplash.com/photo-1764255120215-9bb4665b44cc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMG1lZXRpbmclMjBkYXJrJTIwbWluaW1hbGlzdHxlbnwxfHx8fDE3NzEzNjY5MzR8MA&ixlib=rb-4.1.0&q=80&w=1080" 
+              alt="Strategy Meeting" 
+              class="checklist-image"
+            >
+          </div>
+          <div class="fade-in">
+            <h2 class="mb-8">PASSER DETTE FOR OSS?</h2>
+            <div class="checklist-items">
+              <div class="checklist-item">
+                <div class="checklist-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <p class="checklist-text">Dere har mange initiativer, men lite fokus</p>
+              </div>
+              <div class="checklist-item">
+                <div class="checklist-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <p class="checklist-text">Strategi finnes, men gjennomføringen halter</p>
+              </div>
+              <div class="checklist-item">
+                <div class="checklist-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <p class="checklist-text">Dere skal inn i nye markeder/kunder og må levere raskt</p>
+              </div>
+              <div class="checklist-item">
+                <div class="checklist-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <p class="checklist-text">Dere vil ha ærlig sparring og et team som faktisk får ting gjort</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section section-light">
+      <div class="container" style="max-width: 768px;">
+        <h2 class="text-center mb-12 fade-in">OFTE STILTE SPØRSMÅL</h2>
+        
+        <div class="grid gap-4">
+          <div class="faq-item fade-in">
+            <button class="faq-question">
+              <span>Hvor fort kan dere starte?</span>
+              <span class="faq-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              Som regel 1–2 uker. Hastesaker: ring, så prøver vi å rydde plass.
+            </div>
+          </div>
+          
+          <div class="faq-item fade-in">
+            <button class="faq-question">
+              <span>Garanterer dere resultater?</span>
+              <span class="faq-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              Vi garanterer stram prosess, tydelige leveranser og momentum. Resultater kommer når dette kobles med deres eierskap og gjennomføring.
+            </div>
+          </div>
+          
+          <div class="faq-item fade-in">
+            <button class="faq-question">
+              <span>Må vi ha ferdig strategi?</span>
+              <span class="faq-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              Nei. Vi starter med de beslutningene som låser opp mest verdi nå.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <h2 class="cta-title fade-in">Klar for mer fart?</h2>
+        <p class="cta-desc fade-in">Book en uforpliktende strategisamtale (30 min)</p>
+        <a href="pages/kontakt.html" class="btn btn-dark btn-lg fade-in">KONTAKT OSS NÅ</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand -->
+        <div>
+          <div class="footer-brand">
+            <div class="footer-brand-icon">
+              <span>K</span>
+            </div>
+            <span class="footer-brand-text">KOMMÆRSJ</span>
+          </div>
+          <p class="footer-desc">
+            Vi brenner for å utløse det uforløste kommersielle potensialet i Norge og omegn. Kommersiell suksess gjennom praktisk trening og spisskompetanse.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h4 class="footer-title">TJENESTER</h4>
+          <div class="footer-links">
+            <a href="pages/tjeneste-beslutningssprint.html" class="footer-link">Beslutningssprint</a>
+            <a href="pages/tjeneste-hire.html" class="footer-link">Kommærsj for Hire</a>
+            <a href="pages/tjeneste-sparring.html" class="footer-link">Executive Sparring</a>
+            <a href="pages/tjeneste-enterprise-salg.html" class="footer-link">Enterprise Salg</a>
+          </div>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h4 class="footer-title">SELSKAP</h4>
+          <div class="footer-links">
+            <a href="pages/om-oss.html" class="footer-link">Om Oss</a>
+            <a href="pages/anmeldelser.html" class="footer-link">Anmeldelser</a>
+            <a href="pages/kontakt.html" class="footer-link">Kontakt</a>
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h4 class="footer-title">KONTAKT</h4>
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <span>jonas.lounissi@gmail.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <span>+47 970 04 484</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span>Thomas von Westens gate 8,<br>Trondheim</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2025 Kommærsj – TRD Commercial Hub. Alle rettigheter reservert.</p>
+        <p class="footer-copyright">Spisskompetanse for kommersiell suksess.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

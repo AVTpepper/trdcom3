@@ -1,0 +1,29 @@
+:root {
+  /* Primary Colors */
+  --color-primary-dark: #0a0a0a;
+  --color-primary-black: #000000;
+  --color-accent-gold: #d4af37;
+  --color-accent-gold-light: #f0e68c;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #cccccc;
+  
+  /* Background Colors */
+  --color-bg-primary: #0a0a0a;
+  --color-bg-secondary: #1a1a1a;
+  --color-bg-tertiary: #242424;
+  
+  /* Border & Divider Colors */
+  --color-border: #333333;
+  --color-border-subtle: #2a2a2a;
+  --color-gold-subtle: rgba(212, 175, 55, 0.2);
+  
+  /* Functional Colors */
+  --color-hover: #d4af37;
+  --color-focus: #f0e68c;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: 'Inter', sans-serif;
+}
