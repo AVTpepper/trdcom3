@@ -954,6 +954,17 @@ main {
 .hero-title {
   margin-bottom: 1.5rem;
   line-height: 1.1;
+  max-width: 90%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    max-width: 700px;
+  }
 }
 
 .hero-desc {
