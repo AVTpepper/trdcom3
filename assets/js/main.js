@@ -55,6 +55,7 @@ function initLoadingOverlay() {
 function initMobileNav() {
   const menuToggle = document.getElementById('menu-toggle');
   const mobileNav = document.getElementById('mobile-nav');
+  const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
   const menuIcon = document.getElementById('menu-icon');
   const closeIcon = document.getElementById('close-icon');
 
@@ -65,10 +66,12 @@ function initMobileNav() {
     
     if (isOpen) {
       mobileNav.classList.remove('open');
+      if (mobileMenuOverlay) mobileMenuOverlay.classList.remove('open');
       menuIcon.classList.remove('hidden');
       closeIcon.classList.add('hidden');
     } else {
       mobileNav.classList.add('open');
+      if (mobileMenuOverlay) mobileMenuOverlay.classList.add('open');
       menuIcon.classList.add('hidden');
       closeIcon.classList.remove('hidden');
     }
@@ -79,10 +82,21 @@ function initMobileNav() {
   mobileLinks.forEach(link => {
     link.addEventListener('click', () => {
       mobileNav.classList.remove('open');
+      if (mobileMenuOverlay) mobileMenuOverlay.classList.remove('open');
       menuIcon.classList.remove('hidden');
       closeIcon.classList.add('hidden');
     });
   });
+
+  // Close mobile nav when clicking the overlay
+  if (mobileMenuOverlay) {
+    mobileMenuOverlay.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      mobileMenuOverlay.classList.remove('open');
+      menuIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+    });
+  }
 }
 
 // ============================================================================
